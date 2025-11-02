@@ -1,0 +1,362 @@
+/* Paleta de Cores: Branco, Cinza Escuro (#333), Azul Elétrico/Ciano (#00FFFF) */
+
+/* Configurações Globais e Tipografia */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7; 
+    color: #333;
+    line-height: 1.7; /* Melhor legibilidade para blogs */
+}
+
+a {
+    color: #00FFFF;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #00cccc; /* Tom mais escuro de ciano */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Lora', serif; /* Fonte serifada para elegância */
+    color: #222;
+    line-height: 1.2;
+}
+
+/* --- Header e Navegação --- */
+.blog-header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Lora', serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #000;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    color: #555;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.nav-links a:hover {
+    color: #00FFFF;
+}
+
+/* --- Layout Principal (Artigo + Sidebar) --- */
+.container:not(.blog-header .container, .blog-footer .container) {
+    display: flex;
+    gap: 40px;
+    padding-top: 40px;
+}
+
+.main-post {
+    flex: 3; /* Ocupa mais espaço */
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+}
+
+.sidebar {
+    flex: 1; /* Ocupa menos espaço */
+    padding-top: 30px;
+}
+
+/* --- Postagem Principal --- */
+.post-title {
+    font-size: 2.5em;
+    margin-top: 0;
+}
+
+.post-meta {
+    color: #888;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.category-tag {
+    background-color: #00FFFF;
+    color: #000;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: 700;
+}
+
+/* Imagem em Destaque (Container) */
+.featured-image-container {
+    margin: 30px 0;
+    text-align: center; 
+}
+
+/* REGRA DE IMAGEM CORRIGIDA: Usa object-fit: contain para caber sem cortar e com limite de altura */
+.featured-image-content {
+    width: 100%; 
+    max-height: 400px; /* Limite de altura */
+    object-fit: contain; /* A CHAVE: Garante que a imagem inteira caiba, sem cortes */
+    
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+    
+    background-color: #f0f0f0; /* Cor de fundo para o espaço vazio */
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+
+figcaption {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+    font-size: 0.9em;
+}
+
+/* Citações (Pull Quotes) */
+.pull-quote {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1.3em;
+    border-left: 4px solid #00FFFF;
+    padding-left: 20px;
+    margin: 30px 0;
+    color: #555;
+}
+
+/* --- Galeria de Fotos (Correção aplicada aqui também) --- */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.photo-item {
+    position: relative;
+    height: 180px; /* Altura do container para as fotos da galeria */
+    background-color: #f0f0f0; /* Fundo para as imagens da galeria */
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* A IMAGEM DENTRO DA GALERIA (object-fit: contain para caber) */
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Garante que as imagens da galeria caibam sem cortar */
+    display: block;
+}
+
+.photo-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 5px;
+    font-size: 0.7em;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 10;
+}
+
+/* --- Repercussão Digital (Comentários) --- */
+.digital-buzz {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #fcfcfc;
+    border: 1px solid #eee;
+    border-left: 5px solid #00FFFF; 
+    border-radius: 4px;
+}
+
+.digital-buzz h3 {
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    margin-top: 0;
+    font-size: 1.3em;
+    border-bottom: 1px dotted #eee;
+    padding-bottom: 10px;
+}
+
+.comment-boxes {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.comment-box {
+    flex: 1;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.comment-box p {
+    font-style: italic;
+    font-size: 0.95em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.comment-box strong {
+    color: #00FFFF;
+}
+
+.user-tag {
+    display: block;
+    font-size: 0.8em;
+    color: #00FFFF;
+    font-weight: 700;
+}
+
+/* Seção de Fatos (Para o humor) */
+.fun-facts-section {
+    background-color: #fcfcfc;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 4px;
+    margin: 25px 0;
+}
+
+.fun-facts-section h3 {
+    color: #00FFFF;
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.fun-facts-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.fun-facts-section li {
+    padding: 5px 0;
+}
+
+
+/* --- Sidebar (Widgets) --- */
+.widget {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.03);
+}
+
+.widget h3 {
+    border-bottom: 2px solid #00FFFF;
+    padding-bottom: 10px;
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.popular-posts ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.popular-posts li {
+    border-bottom: 1px dotted #eee;
+    padding: 10px 0;
+}
+
+.popular-posts li:last-child {
+    border-bottom: none;
+}
+
+
+/* --- Footer --- */
+.blog-footer {
+    background-color: #333;
+    color: #ccc;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+    font-size: 0.9em;
+}
+
+
+/* ======================================= */
+/* RESPONSIVIDADE */
+/* ======================================= */
+
+@media (max-width: 900px) {
+    .container:not(.blog-header .container, .blog-footer .container) {
+        flex-direction: column;
+    }
+
+    .main-post, .sidebar {
+        flex: auto;
+    }
+    
+    .sidebar {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Em mobile */
+    .post-title {
+        font-size: 1.8em; 
+    }
+
+    .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .nav-links {
+        margin-top: 15px;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        margin-right: 15px;
+        display: inline-block;
+    }
+    
+    .comment-boxes {
+        flex-direction: column; /* Comentários empilham em mobile */
+    }
+
+    .comment-box.hidden-on-small {
+        display: none !important; /* Oculta o terceiro comentário em telas muito pequenas */
+    }
+
+    /* Galeria em Mobile: menos colunas */
+    .photo-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+    }
+}
